@@ -1,12 +1,21 @@
 package com.zzrkdl.hello_spring.domain;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
+
+@Entity
 public class Member {
 
+    @jakarta.persistence.Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
     private String name;
-    private int tel;
-    private String email;
-    private String password;
+
 
     public String getName() {
         return name;
@@ -24,27 +33,4 @@ public class Member {
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getTel() {
-        return tel;
-    }
-
-    public void setTel(int tel) {
-        this.tel = tel;
-    }
 }
